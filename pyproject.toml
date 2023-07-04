@@ -2,7 +2,7 @@
 name = "module-wrapper"
 version = "0.3.2"
 description = "Module wrapper Python library"
-authors = ["Roman Inflianskas <infroma@gmail.com>"]
+authors = ["Roman Inflianskas <infroma@gmail.com>", "Liam Deacon <liam@antarcticaam.com>"]
 license = "Apache-2.0"
 readme = "README.md"
 keywords = ["module", "wrapper", "proxy", "decorator"]
@@ -13,8 +13,8 @@ classifiers = [
 repository = "https://github.com/rominf/module-wrapper"
 
 [tool.poetry.dependencies]
-python = "^3.6"
-stdlib_list = "^0.8.0"
+python = { version = "^3.6" }
+stdlib_list = { version = "^0.8.0", markers = "python_version <= '3.9'" }
 
 [tool.poetry.dev-dependencies]
 
