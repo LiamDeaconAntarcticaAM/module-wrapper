@@ -12,7 +12,7 @@ except ImportError:
     pass
 
 __all__ = ['wrap', '__version__']
-__version__ = "0.3.2"
+__version__ = "0.3.3"
 
 try:
     STDLIB_MODULE_NAMES = stdlib_list.stdlib_list()
