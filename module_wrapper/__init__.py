@@ -3,15 +3,22 @@ from enum import IntEnum
 from functools import wraps
 import inspect
 import re
-import stdlib_list
+import sys
 import types
 
+try:
+    import stdlib_list
+except ImportError:
+    pass
 
 __all__ = ['wrap', '__version__']
-__version__ = "0.3.1"
+__version__ = "0.3.2"
 
+try:
+    STDLIB_MODULE_NAMES = stdlib_list.stdlib_list()
+except NameError:
+    STDLIB_MODULE_NAMES = sys.stdlib_module_names
 
-STDLIB_MODULE_NAMES = stdlib_list.stdlib_list()
 STDLIB_MODULE_NAMES_REGEX = f"({'|'.join(re.escape(stdlib_module_name) for stdlib_module_name in STDLIB_MODULE_NAMES)})"
 _wrapped_objs = {}
 
