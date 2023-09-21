@@ -16,7 +16,7 @@ __version__ = "0.3.3"
 
 try:
     STDLIB_MODULE_NAMES = stdlib_list.stdlib_list()
-except NameError:
+except (FileNotFoundError, NameError):
     STDLIB_MODULE_NAMES = sys.stdlib_module_names
 
 STDLIB_MODULE_NAMES_REGEX = f"({'|'.join(re.escape(stdlib_module_name) for stdlib_module_name in STDLIB_MODULE_NAMES)})"
